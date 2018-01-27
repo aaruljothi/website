@@ -7,9 +7,10 @@
   <title>arun's website</title>
   <link rel='stylesheet' href='/stylesheets/cover.css'>
   <link rel='stylesheet' href='/stylesheets/animate.css'>
+  
 </head>
 
-<body class="text-center bg2" style="display:none; overflow:hidden">
+<body class="text-center bg1" style="display:none; overflow:hidden">
   
 
   <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
@@ -18,13 +19,17 @@
     </header>
 
     <main role="main" class="inner cover">
-      <h1 class="cover-heading animated fadeIn">I don't know how you got here...</h1>
+      <h1 class="cover-heading animated bounceInDown cursive-font">arun aruljothi</h1>
       <div class="dropdown-divider" style='margin-top:1rem; margin-bottom:1rem;'></div>
-      <div class = ' animated fadeIn'>
-        <h4 ><%= message %></h4>
-        <p class='lead'><%= error.status %></p>
+      <div class = 'animated bounceInUp' id='secondInfo'>
+        <h4 >Graduate Student</h4>
+        <p class='plinks lead'>
+          <a href=/exp?p=rnc>Robotics and Control</a> | 
+          <a href='/exp?p=ml'>Machine Learning </a> | 
+          <a href="/exp?p=cv">Computer Vision</a></p>
         <p class="lead" style="margin-top:1rem">
-          <a href="/home" class="btn btn-lg btn-secondary animated infinite pulse">Go back to the Landing</a>
+          <a href="/" class="btn btn-lg btn-secondary">Check out one of the topics above or <br/>
+            click here to see more</a>
         </p>
       </div>
     </main>
@@ -42,11 +47,6 @@
   <!-- TODO: FOOTER  -->
 </body>
 <script src='/javascripts/cover.js'></script>
-<script>
-    console.log(`<%= error.stack %>`);
-</script>
 <% include tail.ejs %>
 
 </html>
-
-

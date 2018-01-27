@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+    <% include head.ejs %>
+    <title>arun's website</title>
+</head>
+
+<body>
+  <!-- <link rel='stylesheet' href='/stylesheets/site.css' /> -->
+  <div class="container">
+    <% include navbar.ejs %>
+  </div>
+  
+  <% include me.ejs %>
+  <% include edu.ejs %>
+  <% include exp.ejs %>
+  <% include proj.ejs %>
+
+</body>
+<% include tail.ejs %>
+<!-- <script src='/javascript/site.js'></script> -->
+
 </html>
