@@ -1,29 +1,51 @@
 $(document).ready(function () {
     updateWindow();
-    $('body').fadeIn(600);
+
+    $('.nav-item').click(function() {
+        event.preventDefault();
+        history.pushState(null, null, this.href);
+        $('.activePage').removeClass('activePage').fadeOut(600, updateWindow);
+    });
+
+    $('.out').click(function() {
+        event.preventDefault();
+        newLocation = this.href;
+        $('body').fadeOut(1000, newpage);
+    });
 
 });
 
-function updateWindow(){
-    var loc = window.location.href; 
-    var page = loc.split('p/')[1].split('?')[0];
-    var possible_terms = loc.split('p/')[1].split('?')[1].split('&');
-    var search_terms = [];
-    for (var i=0; i < possible_terms.length; i++){
-        search_terms.push({
-            key: possible_terms[i].split('=')[0],
-            value: possible_terms[i].split('=')[1],
-        });
-    }
-    $('#' + page).attr('style', 'block');
-    updateSearch(search_terms);
-    return {
-        page: page, 
-        search: search_terms,
-    };
+function newpage(){
+    window.location = newLocation;
 }
 
-function updateSearch(search){
-    // change somethings
+
+
+function updateWindow(){
+    var loc = window.location.href;
+    var page = loc.split('p/')[1].split('?')[0];
+    if (loc.indexOf('?')!= -1){
+        var possible_terms = loc.split('p/')[1].split('?')[1].split('&');
+        var search_terms = {};
+        for (var i=0; i < possible_terms.length; i++){
+            var key = possible_terms[i].split('=')[0];
+            search_terms[key] = possible_terms[i].split('=')[1];
+        }
+        updateSearch(page, search_terms);
+    }
+    $('#'+page).addClass('activePage').fadeIn(600);
+}
+
+var ss;
+
+function updateSearch(page, search){
+    ss = search;
+    switch (page){
+        case 'exp':
+            $('#v-pills-tab a[id="'+search.pos+'"]').tab('show');
+            break;
+        default: 
+            return; 
+    }
 }
 

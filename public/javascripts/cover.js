@@ -7,13 +7,9 @@ $(document).ready(function () {
     );  
     
     $('a').click(function() {
-
         event.preventDefault();
-        
         newLocation = this.href;
-        
         $('body').fadeOut(1000, newpage);
-        
     });
 
 });
