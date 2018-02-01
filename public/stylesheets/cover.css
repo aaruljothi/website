@@ -3,13 +3,25 @@
  */
 
  :root{
-  --accent1: #61892F;
+  /* --accent1: #61892F;
   --text1: #86C232;
   --text2: #ffffff;
   --background-1: #222629;
   --background-2: #474B4f;
   --background-3: #6B6E70;
-  --background-4: #ffffff;
+  --background-4: #ffffff; */
+
+  --accent1: #05386B;
+  --text1: #5CDB95;
+  --text2: #ffffff;
+  --background-1: #05386B;
+  --background-2: #8EE4AF;
+  --background-3: #379683;
+  --background-4: #fff;
+}
+
+.mt{
+  color: var(--accent1);
 }
 
 /* Links */
@@ -28,7 +40,7 @@ a:hover {
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: Transparent;
   border-radius: 50px;
-  border: .05rem solid var(--accent1);
+  border: .05rem solid var(--background-3);
 }
 
 .btn-secondary:hover,
@@ -40,8 +52,7 @@ a:hover {
 }
 
 .dropdown-divider {
-  color: var(--accent1) !important;
-  border-color: var(--accent1) !important;
+  border-color: var(--background-3) !important;
 }
 
 

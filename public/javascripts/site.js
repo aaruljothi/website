@@ -4,13 +4,15 @@ $(document).ready(function () {
     $('.nav-item').click(function() {
         event.preventDefault();
         history.pushState(null, null, this.href);
+
+        $('.activePage').removeClass('slideInUp').addClass('slideOutDown');
         $('.activePage').removeClass('activePage').fadeOut(600, updateWindow);
     });
 
     $('.out').click(function() {
         event.preventDefault();
         newLocation = this.href;
-        $('body').fadeOut(1000, newpage);
+        $('body').fadeOut(600, newpage);
     });
 
 });
@@ -38,6 +40,7 @@ function updateWindow(){
         updateSearch(page, search_terms);
     }
     $('#'+page).addClass('activePage').fadeIn(600);
+    $('.activePage').removeClass('slideOutDown').addClass('slideInUp');
     switch (page){
         case 'me':
             meEntrance();
