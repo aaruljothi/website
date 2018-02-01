@@ -2,23 +2,28 @@
 <html>
 
 <head>
-    <% include head.ejs %>
+  <% include head.ejs %>
     <title>arun's website</title>
+    <link rel='stylesheet' href='/stylesheets/site.css'>
+    <link rel='stylesheet' href='/stylesheets/animate.css'>
 </head>
 
 <body>
-  <!-- <link rel='stylesheet' href='/stylesheets/site.css' /> -->
-  <div class="container">
-    <% include navbar.ejs %>
+  <div class="bg-img"></div>
+  <div class='content'>
+    <div class="" style="margin-bottom:1rem">
+      <% include navbar.ejs %>
+    </div>
+
+    <% include me.ejs %>
+    <% include edu.ejs %>
+    <% include exp.ejs %>
+    <% include proj.ejs %>
   </div>
-  
-  <% include me.ejs %>
-  <% include edu.ejs %>
-  <% include exp.ejs %>
-  <% include proj.ejs %>
+
 
 </body>
 <% include tail.ejs %>
-<!-- <script src='/javascript/site.js'></script> -->
+  <script src='/javascripts/site.js'></script>
 
 </html>
