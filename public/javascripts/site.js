@@ -15,6 +15,7 @@ $(document).ready(function () {
         $('body').fadeOut(600, newpage);
     });
 
+
 });
 
 function newpage(){
@@ -44,6 +45,10 @@ function updateWindow(){
     switch (page){
         case 'me':
             meEntrance();
+            break;
+        case 'exp':
+            console.log('hello');
+            $('#afrc_pics').carousel();
             break;
         default: 
             break; 

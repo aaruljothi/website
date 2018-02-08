@@ -119,7 +119,8 @@ body {
 }
 
 .cursive-font{
-  font: 400 100px/1.3 'Oleo Script', Helvetica, sans-serif;
+  font: 400 100px/1.3 'Kaushan Script', cursive;
+  /* font-family: 'Kaushan Script', cursive; */
   color: #fff;
   text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
 }
