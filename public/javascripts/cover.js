@@ -1,10 +1,15 @@
 $(document).ready(function () {
     $('body').fadeIn(600);
 
-    $('#secondInfo').one(
+    $('#divider').one(
         'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
-        clickMe,
-    );  
+        openup,
+    );
+
+    // $('#secondInfo').one(
+    //     'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+    //     clickMe,
+    // );  
     
     $('a').click(function() {
         event.preventDefault();
@@ -13,6 +18,11 @@ $(document).ready(function () {
     });
 
 });
+
+function openup(){
+    $('#name').attr('style','visibility:visible').addClass('bounceInDown');
+    $('#secondInfo').attr('style','visibility:visible').addClass('bounceInUp');
+}
 
 function clickMe(){
     $('.plinks').addClass('animated pulse');
