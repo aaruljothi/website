@@ -4,7 +4,7 @@ $(document).ready(function () {
     $('.nav-item').click(function() {
         event.preventDefault();
         history.pushState(null, null, this.href);
-
+        $('body').removeClass('scroll').addClass('noscroll');
         $('.activePage').removeClass('slideInUp').addClass('slideOutDown');
         $('.activePage').removeClass('activePage').fadeOut(600, updateWindow);
     });
@@ -41,6 +41,7 @@ function updateWindow(){
         updateSearch(page, search_terms);
     }
     $('#'+page).addClass('activePage').fadeIn(600);
+    $('#'+page).one(animationEnd, afterPageLoad);
     $('.activePage').removeClass('slideOutDown').addClass('slideInUp');
     switch (page){
         case 'me':
@@ -54,6 +55,12 @@ function updateWindow(){
             break; 
     }
 }
+
+function afterPageLoad(){
+    $("body").removeClass('noscroll').addClass('scroll');
+}
+
+
 
 var ss;
 
@@ -73,3 +80,19 @@ function meEntrance(){
     $('.btn').addClass('fadeInLeft');
 }
 
+// See https://github.com/daneden/animate.css/issues/644
+var animationEnd = (function(el) {
+    var animations = {
+      animation: 'animationend',
+      OAnimation: 'oAnimationEnd',
+      MozAnimation: 'mozAnimationEnd',
+      WebkitAnimation: 'webkitAnimationEnd',
+    };
+  
+    for (var t in animations) {
+      if (el.style[t] !== undefined) {
+        return animations[t];
+      }
+    }
+  })(document.createElement('div'));
+  
